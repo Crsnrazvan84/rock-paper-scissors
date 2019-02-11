@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+header {
+    background: white;
+    text-align: center;
+    color: #000458;
+    padding: 25px;
+}
+
+body {
+    background: linear-gradient(to left, #004e92, #000428); 
+    color: white;
+}
+
+#scoreboard {
+    padding: 20px 50px;
+    margin: 20px auto;
+    border: 5px solid white;
+    border-radius: 10px;
+    width: 300px;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+}
+
+.label {
+    font-size: 14px;
+    background-color: red;
+    padding: 3px 5px;
+    text-align: center;
+    width: auto;
+}
+
+#user-label {
+    position: absolute;
+    top: 40px;
+    left: -25px; 
+}
+
+#comp-label {
+    position: absolute;
+    top: 40px;
+    right: -25px; 
+}
+
+#result {
+    text-align: center;
+    font-size: 40px;
+}
+
+#selectOption {
+    text-align: center;
+}
+
+.selectDivs {
+    display: inline-block;
+    margin: 50px 30px;
+}
+
+.selectPics {
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 130px;
+}
+
