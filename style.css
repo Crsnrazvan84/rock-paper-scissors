@@ -10,6 +10,7 @@ header {
     text-align: center;
     color: #000458;
     padding: 25px;
+    font-size: 20px;
 }
 
 body {
@@ -22,7 +23,7 @@ body {
     margin: 20px auto;
     border: 5px solid white;
     border-radius: 10px;
-    width: 300px;
+    width: 250px;
     position: relative;
     text-align: center;
     font-size: 50px;
@@ -30,16 +31,17 @@ body {
 
 .label {
     font-size: 14px;
-    background-color: red;
+    background-color: #dd144b;
     padding: 3px 5px;
     text-align: center;
-    width: auto;
+    border-radius: 4px;
+
 }
 
 #user-label {
     position: absolute;
     top: 40px;
-    left: -25px; 
+    left: -22px; 
 }
 
 #comp-label {
@@ -59,7 +61,7 @@ body {
 
 .selectDivs {
     display: inline-block;
-    margin: 50px 30px;
+    margin: 50px 15px;
 }
 
 .selectPics {
