@@ -3,8 +3,8 @@ let compScore = 0;
 
 let userScore_span = document.getElementById('user-score');
 let compScore_span = document.getElementById('comp-score');
-let result = document.getElementById('result');
-
+let result_p = document.getElementById('result');
+let result = "";
 let rock = document.getElementById('rock');
 let paper = document.getElementById('paper');
 let scissors = document.getElementById('scissors');
@@ -18,8 +18,33 @@ function compChoice(){
     
 }
 
+function game(userChoice){
+    const computerChoice = compChoice();
+    console.log(userChoice + computerChoice);
+    switch (userChoice + computerChoice) {
+        case "rs":
+        case "pr":
+        case "sp":
+        console.log("You win");
+        break;
 
-function userchoice (){
+        case "rp":
+        case "pc":
+        case "sr":
+        console.log('you loose');
+        break;
+
+        case "rr":
+        case "pp":
+        case "ss":
+        console.log('draw');
+        break;
+    }
+    
+}
+
+
+function getUserchoice (){
     rock.addEventListener('click', function(){
         game("r");
     })
@@ -33,8 +58,6 @@ function userchoice (){
     })
 }
 
-game(){
-    
-}
 
-userchoice();
+
+getUserchoice();
