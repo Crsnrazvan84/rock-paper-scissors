@@ -19,7 +19,7 @@ body {
 }
 
 #scoreboard {
-    padding: 20px 50px;
+    padding: 20px 10px;
     margin: 20px auto;
     border: 5px solid white;
     border-radius: 10px;
@@ -62,11 +62,21 @@ body {
 .selectDivs {
     display: inline-block;
     margin: 50px 15px;
+    border-radius: 50%;
 }
 
 .selectPics {
+    transition: all .1s ease-in-out;
     border: 5px solid white;
     border-radius: 50%;
     width: 130px;
 }
 
+.selectPics:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.selectPics:active {
+    transform: scale(1);
+}
