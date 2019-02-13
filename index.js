@@ -1,9 +1,11 @@
 let userScore = 0;
 let compScore = 0;
 let result_p = document.getElementById('result');
-let rock = document.getElementById('rock');
-let paper = document.getElementById('paper');
-let scissors = document.getElementById('scissors');
+let rock = document.getElementById('r');
+let paper = document.getElementById('p');
+let scissors = document.getElementById('s');
+let userScore_span = document.getElementById('user-score');
+let compScore_span = document.getElementById('comp-score');
 
 
 
@@ -14,89 +16,85 @@ function compChoice() {
 
 }
 
+function fullWord (letter){
+    if (letter === "r") {
+        return "Rock"
+    } else if (letter === "s") {
+        return "Scissors"
+    } else if (letter === "p") {
+        return "Paper"
+    }
+}
+
+
+function win(userChoice, computerChoice){
+    userScore++;
+    userScore_span.innerHTML = userScore;
+    result_p.innerHTML = fullWord(userChoice) +  " beats " + fullWord(computerChoice) + "<br> You win!";
+    document.getElementById(userChoice).classList.add('greenGlow');
+            setTimeout(function () {
+                document.getElementById(userChoice).classList.remove('greenGlow');
+            },300);
+
+
+}
+
+function lose(userChoice, computerChoice){
+    compScore++;
+    compScore_span.innerHTML = compScore;
+    result_p.innerHTML = fullWord(userChoice) +  " loses to " + fullWord(computerChoice) + "<br> You lose!";
+    document.getElementById(userChoice).classList.add('redGlow');
+            setTimeout(function () {
+                document.getElementById(userChoice).classList.remove('redGlow');
+            },300);
+
+}
+function draw(userChoice, computerChoice){
+    result_p.innerHTML = fullWord(userChoice) +  " equals " + fullWord(computerChoice) + "<br> It's a draw!";
+    document.getElementById(userChoice).classList.add('yellowGlow');
+            setTimeout(function () {
+                document.getElementById(userChoice).classList.remove('yellowGlow');
+            },300);
+
+}
+
 function game(userChoice) {
+    
     const computerChoice = compChoice();
     switch (userChoice + computerChoice) {
         //win case
         case "rs":
-            userScore++;
-            result_p.innerHTML = "Rock smashes Scissors <br> You win!";
-            rock.classList.add('greenGlow');
-            setTimeout(function () {
-                rock.classList.remove('greenGlow');
-            },300);
+            win(userChoice,computerChoice);
             break;
         case "pr":
-            userScore++;
-            result_p.innerHTML = "Paper covers Rock <br> You win!";
-            paper.classList.add('greenGlow');
-            setTimeout(function () {
-                paper.classList.remove('greenGlow');
-            },300);
+            win(userChoice, computerChoice);
             break;
         case "sp":
-            userScore++;
-            result_p.innerHTML = "Scissors cuts Paper <br> You win!";
-            scissors.classList.add('greenGlow');
-            setTimeout(function () {
-                scissors.classList.remove('greenGlow');
-            },300);
+            win(userChoice, computerChoice);
             break;
 
         //lose case
         case "rp":
-            userScore++;
-            result_p.innerHTML = "Rock gets covered by Paper <br> You lose!";
-            rock.classList.add('redGlow');
-            setTimeout(function () {
-                rock.classList.remove('redGlow');
-            },300);
+            lose(userChoice, computerChoice);
             break;
         case "ps":
-            userScore++;
-            result_p.innerHTML = "Paper gets cut by Scissors <br> You lose!";
-            paper.classList.add('redGlow');
-            setTimeout(function () {
-                paper.classList.remove('redGlow');
-            },300);
+            lose(userChoice, computerChoice);
             break;
         case "sr":
-            userScore++;
-            result_p.innerHTML = "Scissors get smashed by Rock <br> You lose!";
-            scissors.classList.add('redGlow');
-            setTimeout(function () {
-                scissors.classList.remove('redGlow');
-            },300);
+            lose(userChoice, computerChoice);
             break;
 
         //draw case    
         case "rr":
-            compScore++;
-            result_p.innerHTML = `You both chose Rock <br>It's a draw!`;
-            rock.classList.add('yellowGlow');
-            setTimeout(function () {
-                rock.classList.remove('yellowGlow');
-            },300);
+            draw(userChoice, computerChoice);
             break;
         case "pp":
-            compScore++;
-            result_p.innerHTML = `You both chose Paper <br>It's a draw!`;
-            paper.classList.add('yellowGlow');
-            setTimeout(function () {
-                paper.classList.remove('yellowGlow');
-            },300);
+            draw(userChoice, computerChoice);
             break;
         case "ss":
-            compScore++;
-            result_p.innerHTML = `You both chose Scissors <br>It's a draw!`;
-            scissors.classList.add('yellowGlow');
-            setTimeout(function () {
-                scissors.classList.remove('yellowGlow');
-            },300);
+            draw(userChoice, computerChoice);
             break;
     }
-    document.getElementById('user-score').innerHTML = userScore;
-    document.getElementById('comp-score').innerHTML = compScore;
 
 }
 
