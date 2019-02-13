@@ -59,14 +59,9 @@ body {
     text-align: center;
 }
 
-.selectDivs {
-    display: inline-block;
-    margin: 50px 15px;
-    border-radius: 50%;
-}
-
 .selectPics {
-    transition: all .1s ease-in-out;
+    margin: 50px 15px;
+    transition: all .1s;
     border: 5px solid white;
     border-radius: 50%;
     width: 130px;
@@ -80,3 +75,24 @@ body {
 .selectPics:active {
     transform: scale(1);
 }
+
+
+.greenGlow {
+    border: 5px solid rgb(60,179,113);
+    box-shadow: 0 0 10px 3px  rgb(60,179,113);
+    transition: all .2s;
+
+}
+
+.yellowGlow {
+    border: 5px solid #FFDC00;
+    box-shadow: 0 0 10px 3px #FFDC00;
+    transition: all .2s;
+}
+
+.redGlow {
+    border: 5px solid rgb(220,20,60);
+    box-shadow: 0 0 10px 3px rgb(220,20,60);
+    transition: all .2s;
+}
+
